@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/home_screen/homescreen.dart';
 
 class otpScreen extends StatelessWidget {
   const otpScreen({super.key});
@@ -87,7 +88,7 @@ class otpScreen extends StatelessWidget {
                 width: 189,
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.green),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>home_screen()));},
                   child: Text('Verify',style: TextStyle(color: Colors.white),),
                 ),
               ),

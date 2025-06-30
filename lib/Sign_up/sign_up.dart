@@ -160,9 +160,15 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Text(
-                'Create Your Password ',
-                style: TextStyle(color: Colors.grey),
+              child: Row(
+                children: [
+                  Text(
+                    'Create Your Password ',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  SizedBox(width: 122,),
+                  Icon(Icons.remove_red_eye)
+                ],
               ),
             ),
             SizedBox(
@@ -177,9 +183,15 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Text(
-                'Confirm Password',
-                style: TextStyle(color: Colors.grey),
+              child: Row(
+                children: [
+                  Text(
+                    'Confirm Password',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  SizedBox(width: 150,),
+                  Icon(Icons.remove_red_eye)
+                ],
               ),
             ),
             SizedBox(
