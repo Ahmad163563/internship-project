@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
       ),
-      home: home_screen()//SIGNup()//LoginScreen()
+      home: LoginScreen()
     );
   }
 }
