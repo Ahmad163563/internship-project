@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
       ),
-      home: otpScreen()//SIGNup()//LoginScreen()
+      home: LoginScreen()
     );
   }
 }
