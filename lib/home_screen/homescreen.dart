@@ -26,9 +26,22 @@ class _home_screenState extends State<home_screen> {
             children: [
               Center(
                 child: Container(
-                  height: 400,
+                  height: 200,
                   width: 400,
-                  color: Colors.grey,
+                  color: Colors.white70,
+                  child: Row(
+                    children: [
+                      Text(''),
+                      Container(
+                        height: 35,
+                        width: 200,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all()
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               )
             ],
