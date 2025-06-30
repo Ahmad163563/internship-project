@@ -79,7 +79,10 @@ class _home_screenState extends State<home_screen> {
                 ),
 
               ),
-
+        Expanded(child: FractionallySizedBox(
+          heightFactor: 0.5,
+          child: Image.asset('assets/Group 9992.png',fit: BoxFit.cover,),
+        ))
 
             ],
           ),
