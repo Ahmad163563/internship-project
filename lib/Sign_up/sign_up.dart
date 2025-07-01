@@ -9,6 +9,7 @@ class SIGNup extends StatefulWidget {
 }
 
 class _SIGNupState extends State<SIGNup> {
+  String? selectedGender;
   bool option1 = false;
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class _SIGNupState extends State<SIGNup> {
 
           children: [
             SizedBox(
-              width: 130,
+              width: 70,
             ),
             Text(
               'Carbon',
@@ -58,9 +59,13 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Text(
-                'First Name',
-                style: TextStyle(color: Colors.grey),
+              child: TextField(
+                decoration: InputDecoration(
+                  fillColor: Colors.grey,
+                  hintText: 'First Name',
+                  border: InputBorder.none
+                ),
+
               ),
             ),
             SizedBox(
@@ -75,9 +80,11 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Text(
-                'Last Name',
-                style: TextStyle(color: Colors.grey),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Last Name',
+                  border: InputBorder.none
+                )
               ),
             ),
             SizedBox(
@@ -92,9 +99,11 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Text(
-                'Enter Your Email',
-                style: TextStyle(color: Colors.grey),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter Email',
+                  border: InputBorder.none
+                )
               ),
             ),
             SizedBox(
@@ -109,9 +118,12 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Text(
-                'Enter your phone number',
-                style: TextStyle(color: Colors.grey),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter Phone Number',
+                  border: InputBorder.none
+                )
+
               ),
             ),
             SizedBox(
@@ -126,9 +138,13 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Text(
-                'Enter your Address',
-                style: TextStyle(color: Colors.grey),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter Address',
+                  border: InputBorder.none
+                )
+
+
               ),
             ),
             SizedBox(
@@ -143,9 +159,41 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Text(
-                'Select gender',
-                style: TextStyle(color: Colors.grey),
+              child: DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+            hint: Text("Select Gender"),
+        value: selectedGender,
+        items: ["Male", "Female"].map((gender) {
+          return DropdownMenuItem(
+            value: gender,
+            child: Text(gender),
+          );
+        }).toList(),
+        onChanged: (value) {
+          setState(() {
+            selectedGender = value;
+          });
+        },
+      ),
+            ),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Container(
+              height: 47,
+              width: 328,
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(color: Colors.grey),
+                  color: Colors.white),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Create Password',border: InputBorder.none
+                )
+
               ),
             ),
             SizedBox(
@@ -160,47 +208,20 @@ class _SIGNupState extends State<SIGNup> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.grey),
                   color: Colors.white),
-              child: Row(
-                children: [
-                  Text(
-                    'Create Your Password ',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                  SizedBox(width: 122,),
-                  Icon(Icons.remove_red_eye)
-                ],
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Confirm Password',border: InputBorder.none
+                )
+
               ),
             ),
             SizedBox(
-              height: 12,
-            ),
-            Container(
-              height: 47,
-              width: 328,
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(color: Colors.grey),
-                  color: Colors.white),
-              child: Row(
-                children: [
-                  Text(
-                    'Confirm Password',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                  SizedBox(width: 150,),
-                  Icon(Icons.remove_red_eye)
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 15,
+              height: 23,
             ),
             Row(
               children: [
                 SizedBox(
-                  width: 89,
+                  width: 23,
                 ),
                 Checkbox(
                   value: option1,
@@ -212,6 +233,7 @@ class _SIGNupState extends State<SIGNup> {
                 Text('I agree with term and condition'),
               ],
             ),
+            SizedBox(height: 20,),
             InkWell(
               onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>otpScreen()));},
               child: Container(
@@ -229,12 +251,12 @@ class _SIGNupState extends State<SIGNup> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Row(
               children: [
                 SizedBox(
-                  width: 120,
+                  width: 90,
                 ),
                 Text('Already Have an account?'),
                 Text(

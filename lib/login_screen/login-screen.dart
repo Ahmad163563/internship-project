@@ -63,7 +63,8 @@ class _LoginScreenState extends State<LoginScreen> {
         
             // Email Field
             Center(
-              child: Container(
+              child:
+              Container(
                 alignment: Alignment.centerLeft,
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 width: 368,
@@ -72,7 +73,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(50),
                   border: Border.all()
                   ),
-                child: Text('Enter Your Email'),
+                child: TextField(decoration: InputDecoration(
+                  hintText: 'Enter your Email',
+                  border: InputBorder.none
+                ),),
                 ),
             ),
                SizedBox(height: 20,),
@@ -86,13 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all()
                 ),
-                child: Row(
-                  children: [
-                    Text('Enter Your Password'),
-                    SizedBox(width: 170,),
-                    Icon(Icons.remove_red_eye)
-                  ],
-                )
+                child: TextField(decoration: InputDecoration(hintText: 'Enter Password',border: InputBorder.none),)
               ),
             ),
         
@@ -105,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Row(
                   children: [
-                    SizedBox(width: 50,),
+                    SizedBox(width: 5,),
                     Checkbox(value: option1, onChanged: ((value) {
                       option1=value!;
                       setState(() {
@@ -115,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text('Remember'),
                   ],
                 ),
-                SizedBox(width: 150,),
+                SizedBox(width: 60,),
                 TextButton(
                   onPressed: () {},
                   child: Text('Forgot Password?'),

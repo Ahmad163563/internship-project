@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project/Sign_up/sign_up.dart';
+
 import 'package:project/home_screen/homescreen.dart';
 import 'package:project/login_screen/login-screen.dart';
 import 'package:project/otp_verification_screen/verification_screen.dart';
+
 
 
 void main() {
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
       ),
-      home: LoginScreen()
+      home: home_screen()//SIGNup()//LoginScreen()
     );
   }
 }
