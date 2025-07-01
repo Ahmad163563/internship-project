@@ -56,6 +56,7 @@ class home_screen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             shape: CircleBorder(),
                             padding: EdgeInsets.all(20),
+                            backgroundColor: Colors.green
                           ),
                           child: Icon(Icons.add, size: 30),
                         ),
@@ -70,6 +71,7 @@ class home_screen extends StatelessWidget {
                               width: 60,
                               child: CircularProgressIndicator(
                                 value: 0.5,
+                                color: Colors.green,
                                 strokeWidth: 6,
                               ),
                             ),
@@ -87,7 +89,7 @@ class home_screen extends StatelessWidget {
               SizedBox(height: 20),
 
               // Recent Project Section
-              Text("Recent Green Projects", style: TextStyle(fontWeight: FontWeight.bold)),
+              Container(color:Colors.green,child: Text("Recent Green Projects", style: TextStyle(fontWeight: FontWeight.bold))),
               SizedBox(height: 10),
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
